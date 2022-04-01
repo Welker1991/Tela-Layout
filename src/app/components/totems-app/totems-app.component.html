@@ -1,0 +1,100 @@
+<router-outlet>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Selfit Academias</a>
+        <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="/listar-desktop">Desktop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/listar-laptop">Laptop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/listar-tablet">Tablet/Ipad</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/listar-celular">Celular</a>
+            </li>
+            <li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cadastrar-totem">Cadastrar Totem</a>
+            </li>
+
+            </ul>
+
+            <form class="d-flex">
+            <input class="form-control me-2" type="text"  name="search" placeholder="Buscar" 
+            [(ngModel)]="filter" />
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+        </div>
+        </div>
+    </nav>
+
+    <div class="py-5 text-center">
+        <h2>Lista de Totems</h2>
+    </div>
+
+<!-- <nav class="navbar">
+    <input class="form-control" type="text" name="search" [(ngModel)]="filter" />
+</nav> -->
+
+<table class="table table-striped">
+
+    <thead class="cabecalho">
+        <tr>
+            <th class="identificadorh">Número do Ativo</th>
+            <th>Id</th>
+            <th>Unidade</th>
+            <th>Hostname</th>
+            <th>Tipo</th>
+            <th>Serial</th>
+            <th>Fabricante</th>
+            <th>Modelo</th>
+            <th>Espaço em Disco</th>
+            <th>Processador</th>
+            <th>Memória</th>
+            <th>Número de Série</th>
+            <th>Sistema Operacional</th>
+            <th>Versão do Sistema</th>
+            <th>Arquitetura</th>
+            <th>Versão do Totem</th>
+            <th>Estado do Ativo</th>
+            <th>Observações</th>
+            <th>Data de Adição</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+
+    <tbody class="body">
+        <tr *ngFor="let totem of totems | filter: filter">
+            <td class="identificadorb">{{totem.numeroDoAtivo}}</td>
+            <td>{{totem.id}}</td>
+            <td>{{totem.unidade}}</td>
+            <td>{{totem.hostname}}</td>
+            <td>{{totem.tipo}}</td>
+            <td>{{totem.serial}}</td>
+            <td>{{totem.fabricante}}</td>
+            <td>{{totem.modelo}}</td>
+            <td>{{totem.espacoEmDisco}}</td>
+            <td>{{totem.processador}}</td>
+            <td>{{totem.memoria}}</td>
+            <td>{{totem.numeroDeSerie}}</td>
+            <td>{{totem.sistemaOperacional}}</td>
+            <td>{{totem.versaoSistema}}</td>
+            <td>{{totem.arquiterura}}</td>
+            <td>{{totem.versaoDoTotem}}</td>
+            <td>{{totem.estadoDoAtivo}}</td>
+            <td>{{totem.observacao}}</td>
+            <td>{{totem.dataDeAdicao | date: 'dd/MM/yyyy HH:mm'}}</td>
+            <td><button (click)="atualizar(totem.id)">Editar</button></td>
+            <td><button (click)="remover(totem.id)">Remover</button></td>
+        </tr>
+    </tbody>
+
+</table>
