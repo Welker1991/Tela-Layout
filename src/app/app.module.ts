@@ -22,6 +22,7 @@ import { CreateLaptopComponent } from './create-laptop/create-laptop.component';
 import { CreateCelularComponent } from './create-celular/create-celular.component';
 import { CreateTabletComponent } from './create-tablet/create-tablet.component';
 import { UpdateTotemComponent } from './update-totem/update-totem.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: 'cadastrar-totem', component: CreateTotemComponent },
@@ -34,7 +35,8 @@ const routes: Routes = [
   { path: 'listar-celular', component: CelularComponent },
   { path: 'cadastrar-tablet', component: CreateTabletComponent },
   { path: 'listar-tablet', component: TabletComponent },
-  { path: 'atualizar-totem', component: UpdateTotemComponent }
+  { path: 'atualizar-totem', component: UpdateTotemComponent },
+  { path: 'home', component: HomeComponent }
 
 ];
 
@@ -55,7 +57,8 @@ const routes: Routes = [
     CreateLaptopComponent,
     CreateCelularComponent,
     CreateTabletComponent,
-    UpdateTotemComponent
+    UpdateTotemComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
